@@ -2,18 +2,23 @@
 using namespace std;
 void declarar();
 void resultado(int cod , int q);
-void mostrar(double iC,double iD,double iP);
+void mostrar();
 int cod,q;
 double iC,iD,iP;
 int main(int argc, char *argv[]) {
 	declarar();
-	resultado(cod,q);
-	mostrar(iC,iD,iP);
 	return 0;
 }
 void declarar(){
 	 cout<<"Ingrese el codigo:";cin>>cod;
-	 cout<<"Ingrese la cantidad:";cin>>q;
+	 if(cod>1 && cod<5){
+		 cout<<"Ingrese la cantidad:";cin>>q;
+		 resultado(cod,q);
+		 mostrar();
+	 }else{
+		 cout<<"Numero invalido.";
+	 }
+	 
 }
 void resultado(int cod,int q){
 	switch(cod){
@@ -29,7 +34,7 @@ void resultado(int cod,int q){
 	}
 	iP=iC-iD;
 }
-void mostrar(double iC,double iD,double iP){
+void mostrar(){
 	cout<<"El importe de compra es:"<<iC;
 	cout<<"\nEL importe de descuento es:"<<iD;
 	cout<<"\nEL importe a pagar es:"<<iP;
